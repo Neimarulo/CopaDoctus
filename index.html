@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Copa America 2016</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="Scripts/Angular/angular.min.js"></script>
+	<script src="Scripts/app.js"></script>
+</head>
+
+<body>
+	
+	<div class="wrapper-center" ng-controller="tablaController">
+
+		<div class="table tablePos">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th align="left" valign="top">Nombre</th>
+					<th align="center" valign="top">Siguiente face <br/> (10 pts.)</th>
+					<th align="center" valign="top">Primero del grupo <br/> (15 pts.)</th>
+					<th align="center" valign="top">Segundo del grupo <br/> (15 pts.)</th>
+					<th align="center" valign="top">Marcadores <br/> (15 pts.)</th>
+					<th align="center" valign="top">Goles <br/> (15 pts.)</th>
+					<th align="center" valign="top">Campeón <br/> (15 pts.)</th>
+					<th align="center" valign="top">Segundo puesto <br/> (15 pts.)</th>
+					<th align="center" valign="top">Tercer puesto <br/> (15 pts.)</th>
+					<th align="center" valign="top">Cuarto puesto <br/> (15 pts.)</th>
+					<th align="center" valign="top">Total</th>
+				</tr>
+				<tr ng-repeat="p in players | orderBy:'-total' ">
+					<td align="left" valign="middle">{{p.name}}</td>
+					<td align="center" valign="middle">{{p.nextPha}}</td>
+					<td align="center" valign="middle">{{p.firstGroup}}</td>
+					<td align="center" valign="middle">{{p.secondGroup}}</td>
+					<td align="center" valign="middle">{{p.scores}}</td>
+					<td align="center" valign="middle">{{p.numGoals}}</td>
+					<td align="center" valign="middle">{{p.firstPos}}</td>
+					<td align="center" valign="middle">{{p.secondPos}}</td>
+					<td align="center" valign="middle">{{p.thirdPos}}</td>
+					<td align="center" valign="middle">{{p.quarter}}</td>
+					<td align="center" valign="middle">{{p.total}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="table" >
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th colspan="2">Tabla de Puntos.</th>
+				</tr>
+				<tr>
+					<td>
+						Campeón.	
+					</td>
+					<td>
+						25
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Subcampeón.	
+					</td>
+					<td>
+						20
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Tercer lugar.	
+					</td>
+					<td>
+						15
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Cuarto lugar.	
+					</td>
+					<td>
+						10
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Por acertar que un equipo avance a la siguiente fase. 	
+					</td>
+					<td>
+						10
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Por acertar primer lugar del grupo (Es la suma de 10 puntos por acertar que paso a la siguiente fase, más 5 puntos por acertar la posición).	
+					</td>
+					<td>
+						15
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Por acertar el segundo lugar del grupo (Es la suma de 10 puntos por acertar que paso a la siguiente fase, más 5 puntos por acertar la posición).
+					</td>
+					<td>
+						15
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Por acertar el marcador de un partido	
+					</td>
+					<td>
+						20
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Por acertar el número de goles anotados de un equipo en un partido (En caso de no acertar el marcador del partido).	
+					</td>
+					<td>
+						5
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+	
+
+
+</body>
+</html>
